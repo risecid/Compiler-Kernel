@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Copyright (C) 2021 a xyzprjkt property
+# Copyright (C) 2021 a arifmndr17 property
 #
 
 # Needed Secret Variable
@@ -18,12 +18,12 @@
 echo "Downloading few Dependecies . . ."
 # Kernel Sources
 git clone --depth=1 $KERNEL_SOURCE $KERNEL_BRANCH $DEVICE_CODENAME
-git clone --depth=1 https://github.com/xyz-prjkt/xRageTC_build xRageTC # xRageTC set as Clang Default
+git clone --depth=1 https://github.com/arifmndr17/hyper-clang hyper # hyper set as Clang Default
 
 # Main Declaration
 KERNEL_ROOTDIR=$(pwd)/$DEVICE_CODENAME # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_DEFCONFIG=$DEVICE_DEFCONFIG # IMPORTANT ! Declare your kernel source defconfig file here.
-CLANG_ROOTDIR=$(pwd)/xRageTC # IMPORTANT! Put your clang directory here.
+CLANG_ROOTDIR=$(pwd)/hyper # IMPORTANT! Put your clang directory here.
 export KBUILD_BUILD_USER=$BUILD_USER # Change with your own name or else.
 export KBUILD_BUILD_HOST=$BUILD_HOST # Change with your own hostname.
 CLANG_VER="$("$CLANG_ROOTDIR"/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
@@ -38,8 +38,8 @@ PATH="${PATH}:${CLANG_ROOTDIR}/bin"
 # Warning !! Dont Change anything there without known reason.
 function check() {
 echo ================================================
-echo xKernelCompiler
-echo version : rev1.5 - gaspoll
+echo ScriptCompiler
+echo version : rev1.5 - berangkat
 echo ================================================
 echo BUILDER NAME = ${KBUILD_BUILD_USER}
 echo BUILDER HOSTNAME = ${KBUILD_BUILD_HOST}
@@ -66,7 +66,7 @@ tg_post_msg "<b>xKernelCompiler</b>%0ABuilder Name : <code>${KBUILD_BUILD_USER}<
 
 # Compile
 compile(){
-tg_post_msg "<b>xKernelCompiler:</b><code>Compilation has started</code>"
+tg_post_msg "<b>xKernelCompiler:</b><code>Compile akan dimulai</code>"
 cd ${KERNEL_ROOTDIR}
 make -j$(nproc) O=out ARCH=arm64 ${DEVICE_DEFCONFIG}
 make -j$(nproc) ARCH=arm64 O=out \
