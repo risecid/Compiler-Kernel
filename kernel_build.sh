@@ -38,8 +38,8 @@ PATH="${PATH}:${CLANG_ROOTDIR}/bin"
 # Warning !! Dont Change anything there without known reason.
 function check() {
 echo ================================================
-echo ScriptCompiler
-echo version : rev1.5 - berangkat
+echo Compiler-ExtHyper
+echo version : ExtHyper-2021
 echo ================================================
 echo BUILDER NAME = ${KBUILD_BUILD_USER}
 echo BUILDER HOSTNAME = ${KBUILD_BUILD_HOST}
@@ -62,11 +62,11 @@ tg_post_msg() {
 }
 
 # Post Main Information
-tg_post_msg "<b>xKernelCompiler</b>%0ABuilder Name : <code>${KBUILD_BUILD_USER}</code>%0ABuilder Host : <code>${KBUILD_BUILD_HOST}</code>%0ADevice Defconfig: <code>${DEVICE_DEFCONFIG}</code>%0AClang Version : <code>${KBUILD_COMPILER_STRING}</code>%0AClang Rootdir : <code>${CLANG_ROOTDIR}</code>%0AKernel Rootdir : <code>${KERNEL_ROOTDIR}</code>"
+tg_post_msg "<b>ExtHyper_Compiler</b>%0ABuilder Name : <code>${KBUILD_BUILD_USER}</code>%0ABuilder Host : <code>${KBUILD_BUILD_HOST}</code>%0ADevice Defconfig: <code>${DEVICE_DEFCONFIG}</code>%0AClang Version : <code>${KBUILD_COMPILER_STRING}</code>%0AClang Rootdir : <code>${CLANG_ROOTDIR}</code>%0AKernel Rootdir : <code>${KERNEL_ROOTDIR}</code>"
 
 # Compile
 compile(){
-tg_post_msg "<b>xKernelCompiler:</b><code>Compile akan dimulai</code>"
+tg_post_msg "<b>ExtHyperCompiler:</b><code>Compile ExtHyper akan segera dimulai...!!!</code>"
 cd ${KERNEL_ROOTDIR}
 make -j$(nproc) O=out ARCH=arm64 ${DEVICE_DEFCONFIG}
 make -j$(nproc) ARCH=arm64 O=out \
