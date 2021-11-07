@@ -21,6 +21,8 @@ git clone --depth=1 $KERNEL_SOURCE $KERNEL_BRANCH $DEVICE_CODENAME
 git clone --depth=1 https://github.com/arifmndr17/hyper-clang hyper # hyper set as Clang Default
 
 # Main Declaration
+export KERNEL_NAME=ExtraJoss-Hyper-Clang
+export CAF=LA.UM.9.6.2.c25-01100-89xx.0
 KERNEL_ROOTDIR=$(pwd)/$DEVICE_CODENAME # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_DEFCONFIG=$DEVICE_DEFCONFIG # IMPORTANT ! Declare your kernel source defconfig file here.
 CLANG_ROOTDIR=$(pwd)/hyper # IMPORTANT! Put your clang directory here.
@@ -62,11 +64,11 @@ tg_post_msg() {
 }
 
 # Post Main Information
-tg_post_msg "<b>Hyper-Compiler</b>%0ABuilder Name : <code>${KBUILD_BUILD_USER}</code>%0ABuilder Host : <code>${KBUILD_BUILD_HOST}</code>%0ADevice Defconfig: <code>${DEVICE_DEFCONFIG}</code>%0AClang Version : <code>${KBUILD_COMPILER_STRING}</code>%0AClang Rootdir : <code>${CLANG_ROOTDIR}</code>%0AKernel Rootdir : <code>${KERNEL_ROOTDIR}</code>"
+tg_post_msg "<b>Kernel-Compiler</b>%0ABuilder Name : <code>${KBUILD_BUILD_USER}</code>%0ABuilder Host : <code>${KBUILD_BUILD_HOST}</code>%0ADevice Defconfig: <code>${DEVICE_DEFCONFIG}</code>%0AClang Version : <code>${KBUILD_COMPILER_STRING}</code>%0AClang Rootdir : <code>${CLANG_ROOTDIR}</code>%0AKernel Rootdir : <code>${KERNEL_ROOTDIR}</code>"
 
 # Compile
 compile(){
-tg_post_msg "<b>HyperCompiler:</b><code>Compile akan segera dimulai...!!!</code>"
+tg_post_msg "<b>KernelCompiler:</b><code>Compile akan segera dimulai...!!!</code>"
 cd ${KERNEL_ROOTDIR}
 make -j$(nproc) O=out ARCH=arm64 ${DEVICE_DEFCONFIG}
 make -j$(nproc) ARCH=arm64 O=out \
