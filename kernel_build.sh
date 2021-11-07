@@ -18,14 +18,14 @@
 echo "Downloading few Dependecies . . ."
 # Kernel Sources
 git clone --depth=1 $KERNEL_SOURCE $KERNEL_BRANCH $DEVICE_CODENAME
-git clone --depth=1 https://github.com/arifmndr17/hyper-clang hyper # hyper set as Clang Default
+git clone --depth=1 https://github.com/arifmndr17/Jancok-Clang Clang # Clang set as Clang Default
 
 # Main Declaration
 export KERNEL_NAME=ExtraJoss-Hyper-Clang
 export CAF=LA.UM.9.6.2.c25-01100-89xx.0
 KERNEL_ROOTDIR=$(pwd)/$DEVICE_CODENAME # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_DEFCONFIG=$DEVICE_DEFCONFIG # IMPORTANT ! Declare your kernel source defconfig file here.
-CLANG_ROOTDIR=$(pwd)/hyper # IMPORTANT! Put your clang directory here.
+CLANG_ROOTDIR=$(pwd)/Clang # IMPORTANT! Put your clang directory here.
 export KBUILD_BUILD_USER=$BUILD_USER # Change with your own name or else.
 export KBUILD_BUILD_HOST=$BUILD_HOST # Change with your own hostname.
 CLANG_VER="$("$CLANG_ROOTDIR"/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
