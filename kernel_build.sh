@@ -21,8 +21,6 @@ git clone --depth=1 $KERNEL_SOURCE $KERNEL_BRANCH $DEVICE_CODENAME
 git clone --depth=1 https://github.com/arifmndr17/Jancok-Clang Clang # Clang set as Clang Default
 
 # Main Declaration
-export KERNEL_NAME=ExtraJoss-Hyper-Clang
-export CAF=LA.UM.9.6.2.c25-01100-89xx.0
 KERNEL_ROOTDIR=$(pwd)/$DEVICE_CODENAME # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_DEFCONFIG=$DEVICE_DEFCONFIG # IMPORTANT ! Declare your kernel source defconfig file here.
 CLANG_ROOTDIR=$(pwd)/Clang # IMPORTANT! Put your clang directory here.
