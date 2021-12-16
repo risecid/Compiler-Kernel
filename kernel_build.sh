@@ -45,6 +45,9 @@ echo DEVICE_DEFCONFIG = ${DEVICE_DEFCONFIG}
 echo TOOLCHAIN_VERSION = ${KBUILD_COMPILER_STRING}
 echo CLANG_ROOTDIR = ${CLANG_ROOTDIR}
 echo KERNEL_ROOTDIR = ${KERNEL_ROOTDIR}
+echo Update Kernel = Merge caf tag 'LA.UM.10.6.2.r1-00600-89xx.0'
+echo Update Kernel = Overlocked GPU Up To 825 MHz
+echo Update Kernel = Overclocked Screen To 68 Hz
 echo ================================================
 }
 
